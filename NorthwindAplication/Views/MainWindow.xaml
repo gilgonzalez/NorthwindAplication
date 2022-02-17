@@ -17,7 +17,7 @@
                         <Image Source="/imagenes/profits.png"/>
                     </MenuItem.Icon>-->
                 </MenuItem>
-                <MenuItem Header="Productos">
+                <MenuItem Header="Productos" Click="MenuItem_Click">
                     <!--<MenuItem.Icon>
                         <Image Source="/imagenes/money.png"/>
                     </MenuItem.Icon>-->
@@ -31,14 +31,14 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Informes">
-                <MenuItem Header="Pedidos por fecha">
+                <MenuItem Header="Pedidos por fecha"  Click="MenuItem_Click">
                     <!--<MenuItem.Icon>
                         <Image Source="/imagenes/disquete.png"/>
                     </MenuItem.Icon>-->
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Ayuda">
-                <MenuItem Header="_Manual de Usuario">
+                <MenuItem Header="Manual de Usuario" Click="MenuItem_Click">
                     <!--<MenuItem.Icon>
                         <Image Source="/imagenes/disquete.png"/>
                     </MenuItem.Icon>-->

@@ -18,9 +18,9 @@ namespace Northwind.Presentation.Views.Reports
     /// <summary>
     /// Lógica de interacción para OrdersByDate.xaml
     /// </summary>
-    public partial class ProductsByCustomer : UserControl
+    public partial class OrdersByDateView : UserControl
     {
-        public ProductsByCustomer()
+        public OrdersByDateView()
         {
             InitializeComponent();
         }

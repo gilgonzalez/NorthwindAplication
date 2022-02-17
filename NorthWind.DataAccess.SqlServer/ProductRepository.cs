@@ -26,7 +26,7 @@ namespace NorthWind.DataAccess.SqlServer
 
                 SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
 
-                sqlCommand.Parameters.Add("@ProductName", SqlDbType.Int);
+                sqlCommand.Parameters.Add("@ProductName", SqlDbType.NVarChar);
                 sqlCommand.Parameters["@ProductName"].Value = productName;
 
                 int count = (int)sqlCommand.ExecuteScalar();
@@ -108,7 +108,7 @@ namespace NorthWind.DataAccess.SqlServer
             }
         }
 
-        public bool existOrderDetailsAssignedToProduct(string productId)
+        public bool existOrderDetailsAssignedToProduct(int productId)
         {
             try
             {
@@ -141,7 +141,7 @@ namespace NorthWind.DataAccess.SqlServer
             }
         }
 
-        public void removeProduct(string productId)
+        public void removeProduct(int productId)
         {
 
             try
@@ -167,33 +167,30 @@ namespace NorthWind.DataAccess.SqlServer
 
 }
 
-        public List<Customer> GetProducts()
+        public List<Product> GetProducts()
         {
-            List<Customer> customers = new List<Customer>();
+            List<Product> products = new List<Product>();
             try
             {
                 sqlConnection.Open();
-                string sql = @" SELECT [CustomerID],[CompanyName],[ContactName],[ContactTitle],[Address],
-                                       [City] ,[Region] ,[PostalCode],[Country],[Phone],[Fax] 
-                                FROM Customers";
+                string sql = @" SELECT [ProductID],[ProductName],[SupplierID],[CategoryID],
+                                        [QuantityPerUnit],[UnitPrice],[UnitsInStock],[UnitsOnOrder]
+                                FROM [Northwind].[dbo].[Products]";
+
                 SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
 
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
-                    Customer customer = new Customer();
-                    customer.CustomerId = reader["CustomerId"].ToString();
-                    customer.CompanyName = reader["CompanyName"].ToString();
-                    customer.ContactName = reader["ContactName"].ToString();
-                    customer.ContactTitle = reader["ContactTitle"].ToString();
-                    customer.Address = reader["Address"].ToString();
-                    customer.City = reader["City"].ToString();
-                    customer.Region = reader["Region"].ToString();
-                    customer.PostalCode = reader["PostalCode"].ToString();
-                    customer.Country = reader["Country"].ToString();
-                    customer.Phone = reader["Phone"].ToString();
-                    customer.Fax = reader["Fax"].ToString();
-                    customers.Add(customer);
+                    Product product = new Product();
+                    product.ProductID = Convert.ToInt32(reader["ProductID"]);
+                    product.ProductName = reader["ProductName"].ToString();
+                    product.SupplierID = Convert.ToInt32(reader["SupplierID"]);
+                    product.CategoryID = Convert.ToInt32(reader["CategoryID"]);
+                    product.QuantityPerUnit = reader["QuantityPerUnit"].ToString();
+                    product.UnitPrice = Convert.ToDecimal(reader["UnitPrice"]);
+                    product.UnitsInStock = Convert.ToInt16(reader["UnitsInStock"]);
+                    products.Add(product);
                 }
                 sqlConnection.Close();
             }
@@ -202,7 +199,7 @@ namespace NorthWind.DataAccess.SqlServer
                 sqlConnection.Close();
                 throw ex;
             }
-            return customers;
+            return products;
         }
 
     }
