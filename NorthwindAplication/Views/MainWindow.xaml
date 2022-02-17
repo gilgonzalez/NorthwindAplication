@@ -1,0 +1,52 @@
+﻿<Window x:Class="Northwind.Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Northwind.Presentation"
+        mc:Ignorable="d"
+        Title="Northwind" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" x:Name="UpperMenu">
+
+            <MenuItem Header="Dashboard" Click="MenuItem_Click">
+            </MenuItem>
+            <MenuItem Header="_Entidades" >
+                <MenuItem Header="Clientes" Click="MenuItem_Click">
+                    <!--<MenuItem.Icon>
+                        <Image Source="/imagenes/profits.png"/>
+                    </MenuItem.Icon>-->
+                </MenuItem>
+                <MenuItem Header="Productos">
+                    <!--<MenuItem.Icon>
+                        <Image Source="/imagenes/money.png"/>
+                    </MenuItem.Icon>-->
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Operaciones">
+                <MenuItem Header="_Pedidos" >
+                    <!--<MenuItem.Icon>
+                        <Image Source="/imagenes/disquete.png"/>
+                    </MenuItem.Icon>-->
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Informes">
+                <MenuItem Header="Pedidos por fecha">
+                    <!--<MenuItem.Icon>
+                        <Image Source="/imagenes/disquete.png"/>
+                    </MenuItem.Icon>-->
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Ayuda">
+                <MenuItem Header="_Manual de Usuario">
+                    <!--<MenuItem.Icon>
+                        <Image Source="/imagenes/disquete.png"/>
+                    </MenuItem.Icon>-->
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <DockPanel>
+            <ContentControl Grid.Row="0" Grid.Column="0" x:Name="_contentUserControl"/>
+        </DockPanel>
+    </DockPanel>
+</Window>

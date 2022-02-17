@@ -1,0 +1,102 @@
+﻿<Window x:Class="Northwind.Presentation.Views.Customers.NewCustomer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Northwind.Presentation.Views.Customers"
+             mc:Ignorable="d" 
+            Title="Alta de nuevo cliente" Height="400" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="3" Text="Alta de nuevo cliente" FontSize="25" TextAlignment="Center" FontWeight="Bold"></TextBlock>
+        <StackPanel Grid.Row="1" Grid.Column="0"  Margin="30" Width="Auto" VerticalAlignment="Top">
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Customer Id"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbCustomerId"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Company Name"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbCompanyName"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Contact Name"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbContactName"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Contact Title"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbContactTitle"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Phone"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbPhone"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1"  Margin="30" Width="Auto" VerticalAlignment="Top">
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Country"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbCountry"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="City"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbCity"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Region"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbRegion"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Postal Code"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbPostalCode"/>
+            <Label >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png"/>
+                    <AccessText Text="Address"/>
+                </StackPanel>
+            </Label>
+            <TextBox Name="tbAddress"/>
+        </StackPanel>
+
+        <WrapPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right">
+            <Button  HorizontalAlignment="center" VerticalAlignment="Center" Width="80" Margin="10,0,10,0" Click="CreateNewCustomer_Click">Dar de alta</Button>
+            <Button  HorizontalAlignment="center" VerticalAlignment="Center" Width="80" Margin="10,0,10,0" IsCancel="True">Cancelar</Button>
+        </WrapPanel>
+
+
+    </Grid>
+</Window>
