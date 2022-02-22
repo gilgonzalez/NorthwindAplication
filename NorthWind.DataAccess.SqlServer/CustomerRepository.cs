@@ -14,6 +14,9 @@ namespace NorthWind.DataAccess.SqlServer
         public CustomerRepository(): base()
         {
 
+
+
+
         }
 
         public bool ExistCustomerId(string CustomerId)
