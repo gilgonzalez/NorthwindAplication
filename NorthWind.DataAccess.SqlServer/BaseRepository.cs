@@ -14,7 +14,7 @@ namespace NorthWind.DataAccess.SqlServer
 
         public BaseRepository()
         {
-            connectionString = "Server=192.168.1.132;Database=Northwind;UID=SA;Password=<YourStrong@Passw0rd>;";
+            connectionString = "Server=192.168.213.130;Database=Northwind;UID=SA;Password=MeGustaMuchoDocker1;";
             sqlConnection = new SqlConnection();
             sqlConnection.ConnectionString = this.connectionString;
         }
